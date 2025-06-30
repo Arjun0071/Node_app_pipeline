@@ -9,6 +9,11 @@ var connection = mysql.createConnection({
   password : process.env.RDS_PASSWORD,
   port     : process.env.RDS_PORT
 });
+
+app.get("/", (req, res) => {
+  res.send("🎉 Welcome to the Node.js App! 🚀");
+});
+
 app.get("/db", (req, res) => {
 
 connection.connect(function(err) {
